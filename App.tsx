@@ -1,16 +1,15 @@
-
 import React from 'react';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Hero from './sections/Hero';
-import Challenge from './sections/Challenge';
+import Navbar from './components/Navbar';
 import Approach from './sections/Approach';
-import Progress from './sections/Progress';
-import Differentiation from './sections/Differentiation';
-import Mission from './sections/Mission';
+import Challenge from './sections/Challenge';
 import Contact from './sections/Contact';
+import Differentiation from './sections/Differentiation';
+import Hero from './sections/Hero';
 import HeroSection from './sections/HeroSection';
+import Mission from './sections/Mission';
 import PhilosophySection from './sections/PhilosophySection';
+import Progress from './sections/Progress';
 import TechSection from './sections/TechSection';
 
 const App: React.FC = () => {
@@ -27,8 +26,8 @@ const App: React.FC = () => {
         <Differentiation />
         <HeroSection />
         <Mission />
-      <PhilosophySection />
-      <TechSection />
+        <PhilosophySection />
+        <TechSection />
         <Contact />
       </main>
       <Footer />
