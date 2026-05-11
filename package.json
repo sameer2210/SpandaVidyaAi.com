@@ -1,0 +1,54 @@
+{
+  "name": "spandavidya-ai-ayurvedic-pulse-diagnostics",
+  "version": "1.0.0",
+  "description": "spandaVidya - AI-powered Ayurvedic pulse diagnostics platform combining traditional Naadi Pariksha with modern signal intelligence and machine learning for clinical-grade health assessments",
+  "keywords": [
+    "ayurveda",
+    "pulse-diagnosis",
+    "naadi-pariksha",
+    "ai-healthcare",
+    "digital-health",
+    "ayurvedic-medicine",
+    "health-tech",
+    "ppg-sensor",
+    "signal-processing",
+    "personalized-medicine",
+    "preventive-healthcare",
+    "wellness-platform",
+    "traditional-medicine",
+    "india-healthcare"
+  ],
+  "author": "spandaVidya Research Initiative <contact@spandavidya.ai>",
+  "homepage": "https://spandavidya.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spandavidya/platform"
+  },
+  "bugs": {
+    "url": "https://github.com/spandavidya/platform/issues",
+    "email": "support@spandavidya.ai"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

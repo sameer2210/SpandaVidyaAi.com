@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <!-- Primary Meta Tags -->
+  <title>spandaVidya | AI-Powered Ayurvedic Pulse Diagnosis & Digital Naadi Pariksha</title>
+  <meta name="title" content="spandaVidya | AI-Powered Ayurvedic Pulse Diagnosis & Digital Naadi Pariksha">
+  <meta name="description" content="spandaVidya revolutionizes traditional Ayurvedic pulse diagnostics (Naadi Pariksha) with AI-powered signal intelligence. Get accurate, clinical-grade health assessments using advanced PPG sensors and machine learning for personalized Ayurvedic wellness.">
+  <meta name="keywords" content="spandaVidya, Ayurvedic pulse diagnosis, Naadi Pariksha, digital Ayurveda, AI pulse diagnostics, PPG sensor health, Naadi Tarangini, personalized Ayurveda, pulse analysis AI, Ayurvedic health assessment, Vata Pitta Kapha diagnosis, traditional Indian medicine, health tech India, AYUSH approved, Naadi Vigyan, pulse wave analysis, functional medicine, preventive healthcare, holistic health assessment, Ayurvedic AI technology">
+  <meta name="author" content="spandaVidya Research Initiative">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://spandavidya.ai/" />
+  
+  <!-- Geographic Targeting -->
+  <meta name="geo.region" content="IN" />
+  <meta name="geo.placename" content="India" />
+  
+  <!-- Language -->
+  <link rel="alternate" hreflang="en" href="https://spandavidya.ai/" />
+  <link rel="alternate" hreflang="hi" href="https://spandavidya.ai/hi/" />
+  <link rel="alternate" hreflang="x-default" href="https://spandavidya.ai/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://spandavidya.ai/">
+  <meta property="og:site_name" content="spandaVidya">
+  <meta property="og:title" content="spandaVidya | AI-Powered Ayurvedic Pulse Diagnosis">
+  <meta property="og:description" content="Revolutionary AI-enabled Ayurvedic pulse diagnostics. Experience traditional Naadi Pariksha with modern precision and clinical-grade accuracy.">
+  <meta property="og:image" content="https://spandavidya.ai/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="spandaVidya AI Pulse Diagnostics Platform">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://spandavidya.ai/">
+  <meta name="twitter:site" content="@spandaVidya">
+  <meta name="twitter:creator" content="@spandaVidya">
+  <meta name="twitter:title" content="spandaVidya | AI-Powered Ayurvedic Pulse Diagnosis">
+  <meta name="twitter:description" content="Experience the fusion of ancient Ayurvedic wisdom and modern AI technology for precise pulse-based health assessments.">
+  <meta name="twitter:image" content="https://spandavidya.ai/og-image.jpg">
+  <meta name="twitter:image:alt" content="spandaVidya AI-Powered Pulse Diagnostics">
+
+  <!-- Favicon Package -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#b58b2a">
+
+  <!-- Fonts & Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- DNS Prefetch for faster loading -->
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://esm.sh">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              accent: '#b58b2a',
+              text: '#1c1c1c',
+              muted: '#555',
+              bg: '#f9fafb',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    @keyframes pulse-stroke {
+      0% { stroke-dashoffset: 1000; opacity: 0; }
+      20% { opacity: 0.3; }
+      50% { opacity: 0.5; }
+      80% { opacity: 0.3; }
+      100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-pulse-path {
+      stroke-dasharray: 1000;
+      animation: pulse-stroke 6s linear infinite;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #b58b2a;
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+  </style>
+
+  <!-- Enhanced Structured Data (JSON-LD) for better SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "spandaVidya",
+    "alternateName": "spanda Vidya AI",
+    "url": "https://spandavidya.ai",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spandavidya.ai/logo.png",
+      "width": "600",
+      "height": "60"
+    },
+    "description": "spandaVidya digitizes traditional Ayurvedic pulse diagnostics (Naadi Pariksha) using advanced AI, signal intelligence, and PPG sensors for objective, reproducible, clinical-grade health assessments.",
+    "foundingDate": "2024",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@spandavidya.ai",
+      "contactType": "customer support",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://twitter.com/spandaVidya",
+      "https://linkedin.com/company/spandavidya",
+      "https://facebook.com/spandaVidya"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "medicalSpecialty": "Ayurveda"
+  }
+  </script>
+
+  <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "spandaVidya AI Pulse Diagnostics Platform",
+    "description": "AI-powered Ayurvedic pulse diagnosis system combining traditional Naadi Pariksha with modern signal processing and machine learning.",
+    "brand": {
+      "@type": "Brand",
+      "name": "spandaVidya"
+    },
+    "category": "Medical Technology",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://spandavidya.ai",
+      "priceCurrency": "INR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    }
+  }
+  </script>
+
+  <!-- WebSite Schema for Search Box -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "spandaVidya",
+    "url": "https://spandavidya.ai",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://spandavidya.ai/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://spandavidya.ai"
+    }]
+  }
+  </script>
+
+  <!-- FAQ Schema (Add your actual FAQs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is spandaVidya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "spandaVidya is an AI-powered platform that digitizes traditional Ayurvedic pulse diagnostics (Naadi Pariksha) using advanced signal processing, PPG sensors, and machine learning to provide objective, reproducible, and clinical-grade health assessments."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How does AI-powered pulse diagnosis work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our platform uses high-fidelity PPG sensors to capture pulse wave signals from multiple anatomical points. These signals are analyzed using advanced AI algorithms trained on traditional Ayurvedic principles to assess Vata, Pitta, and Kapha doshas and provide personalized health insights."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is spandaVidya clinically validated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, spandaVidya employs clinical-grade signal processing and has been developed through extensive research combining traditional Ayurvedic wisdom with modern medical technology standards."
+      }
+    }]
+  }
+  </script>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="root"></div>
+  
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    const observeElements = () => {
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    };
+
+    window.addEventListener('DOMContentLoaded', observeElements);
+    let pollCount = 0;
+    const interval = setInterval(() => {
+      observeElements();
+      if (++pollCount > 10) clearInterval(interval);
+    }, 500);
+  </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
