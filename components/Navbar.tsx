@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     }`}>
       <div className="font-serif text-xl md:text-2xl font-bold text-brand-text tracking-tight flex items-center gap-2">
         {/* <div className="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center text-white text-xs"><img src="./public/logo.jpg" alt="" /></div> */}
-        <img src="logo2.png" alt="Logo" className="w-64 h-40 object-contain " />
+        <img src="/logo2.png" alt="Logo" className="w-64 h-40 object-contain " />
       </div>
 
       {/* Desktop Links */}

@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           {/* Brand & Mission */}
           <div className="flex flex-col items-center md:items-start space-y-4">
             <div className="font-serif text-3xl font-bold text-brand-text tracking-tight flex items-center gap-2">
-              <div className="w-20 h-16 rounded-xl flex items-center justify-center text-white text-[10px] font-sans"> <img className="w-full h-full object-contain" src="logo2.png" alt="SpandaVidya Logo" /></div>
+              <div className="w-20 h-16 rounded-xl flex items-center justify-center text-white text-[10px] font-sans"> <img className="w-full h-full object-contain" src="/logo2.png" alt="SpandaVidya Logo" /></div>
               SpandaVidya
             </div>
             <p className="text-brand-muted text-sm text-center md:text-left leading-relaxed max-w-xs">
