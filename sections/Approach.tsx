@@ -1,38 +1,16 @@
-
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { T } from '../theme';
+import Card from '../components/Card';
+import { approaches } from '@/data';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const approaches = [
-  {
-    phase: "01",
-    title: "Signal Capture",
-    detail: "Radial pulse at three diagnostic positions",
-    description:
-      "Non-invasive sensors record waveform data at clinically relevant depths while preserving natural pulse variability."
-  },
-  {
-    phase: "02",
-    title: "Ayurvedic Mapping",
-    detail: "Gati, Vega, Tala and Dosha tendencies",
-    description:
-      "Each waveform is translated into classical Ayurvedic descriptors so the output reflects Vaidya logic, not only biomedical metrics."
-  },
-  {
-    phase: "03",
-    title: "Clinical Interpretation",
-    detail: "Cross-checked with practitioner assessments",
-    description:
-      "Model outputs are reviewed against expert observations to improve reliability and keep decisions aligned with real clinical practice."
-  }
-];
 
 const Approach: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const headerRef = useRef<HTMLDivElement | null>(null);
-  const cardRefs = useRef<HTMLElement[]>([]);
+  const cardRefs = useRef<HTMLDivElement[]>([]);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -80,53 +58,64 @@ const Approach: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="approach" className="py-32 px-6 md:px-[8vw] bg-[#f6f3ee] relative overflow-hidden">
-      <div className="absolute inset-y-0 left-0 w-px bg-brand-accent/15 pointer-events-none" />
-      <div className="relative z-10">
+    <section ref={sectionRef} id="approach" className="py-32 px-6 md:px-[8vw] bg-transparent relative overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div ref={headerRef} className="mb-20">
-          <span className="inline-block text-brand-accent text-xs font-semibold uppercase tracking-[0.16em] mb-5">
-            02 - Methodology
+          <span 
+            className="inline-block text-xs font-semibold uppercase tracking-[0.16em] mb-5"
+            style={{ color: T.accent }}
+          >
+            02 — Methodology
           </span>
-          <div className="flex flex-wrap items-start gap-12">
-            <h2 className="font-serif text-5xl md:text-6xl font-semibold leading-tight text-brand-text max-w-[520px]">
+          <div className="flex flex-wrap lg:flex-nowrap items-start gap-12 lg:gap-16">
+            <h2 
+              className="font-serif text-5xl md:text-6xl font-semibold leading-tight max-w-[520px]"
+              style={{ color: T.charcoal }}
+            >
               Translating touch into
               <br />
-              <em className="italic text-brand-accent font-medium">measurable patterns</em>
+              <em className="italic font-medium" style={{ color: T.accent }}>measurable patterns</em>
             </h2>
             <div className="max-w-2xl pt-2 space-y-5">
-              <p className="text-lg text-brand-muted leading-relaxed">
+              <p className="text-lg leading-relaxed font-light" style={{ color: T.muted }}>
                 A skilled Vaidya does not read only speed; they read character, rhythm, and tension. Our methodology captures that same richness as structured signal data.
               </p>
-              <p className="text-lg text-brand-muted leading-relaxed">
+              <p className="text-lg leading-relaxed font-light" style={{ color: T.muted }}>
                 The goal is not to replace traditional judgment. It is to make pulse interpretation more consistent, traceable, and teachable across practitioners.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-1 border border-black/10 bg-[#ebe7df]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {approaches.map((item, idx) => (
-            <article
+            <Card
               key={idx}
               ref={(el) => {
                 if (el) cardRefs.current[idx] = el;
               }}
-              className="bg-[#fdfcf9] p-10 md:p-12 min-h-[320px] transition-colors duration-500 hover:bg-white"
+              className="min-h-[320px] text-left"
             >
-              <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-accent mb-8">
+              <div 
+                className="text-[11px] font-semibold uppercase tracking-[0.2em] mb-8 animate-pulse-slow"
+                style={{ color: T.accent }}
+              >
                 Phase {item.phase}
               </div>
-              <h3 className="font-serif text-3xl font-semibold text-brand-text mb-3">
+              <h3 className="font-serif text-3xl font-semibold mb-3 animate-fade-in-up" style={{ color: T.charcoal }}>
                 {item.title}
               </h3>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-accent/80 mb-6">
+              <div 
+                className="text-[11px] font-semibold uppercase tracking-[0.12em] mb-6"
+                style={{ color: `${T.accent}d0` }}
+              >
                 {item.detail}
               </div>
-              <p className="text-brand-muted leading-relaxed text-base">
+              <p className="leading-relaxed text-base font-light flex-grow mb-6" style={{ color: T.muted }}>
                 {item.description}
               </p>
-              <div className="mt-8 w-14 h-[2px] bg-brand-accent/40" />
-            </article>
+              <div className="w-14 h-[2px] transition-all duration-300" style={{ backgroundColor: `${T.accent}60` }} />
+            </Card>
           ))}
         </div>
       </div>

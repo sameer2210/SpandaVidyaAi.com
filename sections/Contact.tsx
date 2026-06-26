@@ -1,10 +1,48 @@
-
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { contact, branding } from '@/data';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '../components/Button';
+import { T } from '../theme';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ContactCard: React.FC<{ icon: React.ReactNode; label: string; value: string }> = ({ icon, label, value }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex gap-4 p-5 transition-all"
+      style={{
+        backgroundColor: T.cream,
+        border: isHovered ? `1px solid rgba(140, 107, 62, 0.3)` : T.border.light,
+        borderRadius: T.radius.xl, // 24px
+        transform: isHovered ? "translateY(-2px)" : "translateY(0)",
+        boxShadow: isHovered ? T.shadows.md : T.shadows.sm,
+        transitionDuration: T.transitions.duration,
+        transitionTimingFunction: T.transitions.easing,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div 
+        className="w-11 h-11 rounded-xl border flex items-center justify-center" 
+        style={{ 
+          backgroundColor: "rgba(140, 107, 62, 0.05)",
+          borderColor: "rgba(140, 107, 62, 0.20)",
+          color: T.accent
+        }} 
+        aria-hidden="true"
+      >
+        {icon}
+      </div>
+      <div>
+        <p className="text-sm tracking-wide uppercase font-semibold mb-1" style={{ color: T.muted }}>{label}</p>
+        <p className="font-medium" style={{ color: T.charcoal }}>{value}</p>
+      </div>
+    </div>
+  );
+};
 
 const Contact: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -57,22 +95,31 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className="py-28 px-6 md:px-[8vw] bg-[#f6f3ee]">
-      <div className="max-w-6xl mx-auto bg-[#fcfbf7] border border-black/10 rounded-[2rem] p-8 md:p-12 shadow-[0_14px_45px_rgba(0,0,0,0.08)] relative overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-72 h-72 bg-brand-accent/10 rounded-full blur-3xl" aria-hidden="true" />
-
+    <section ref={sectionRef} id="contact" className="py-32 px-6 md:px-[8vw] bg-transparent">
+      <div 
+        className="max-w-6xl mx-auto p-8 md:p-12 relative overflow-hidden"
+        style={{
+          backgroundColor: T.cream,
+          border: T.border.light,
+          borderRadius: T.radius.xl, // 24px
+          boxShadow: T.shadows.md,
+        }}
+      >
         <div className="relative z-10 grid md:grid-cols-2 gap-10 md:gap-14 items-start">
           <div ref={headerRef}>
-            <div className="inline-block text-brand-accent text-xs font-semibold uppercase tracking-[0.16em] mb-5">
+            <div 
+              className="inline-block text-xs font-semibold uppercase tracking-[0.16em] mb-5"
+              style={{ color: T.accent }}
+            >
               06 - Contact
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-5 leading-tight text-brand-text">
-              Connect with <br />SpandaVidya
+            <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-5 leading-tight" style={{ color: T.charcoal }}>
+              Connect with <br />{branding.title}
             </h2>
-            <p className="text-lg text-brand-muted leading-relaxed mb-8 max-w-xl">
+            <p className="text-lg leading-relaxed mb-8 max-w-xl font-light" style={{ color: T.muted }}>
               We are inviting researchers, medical clinicians, Ayurvedic experts, and mission-aligned investors to join our research hub.
             </p>
-            <Button href="mailto:Dilpar99@gmail.com" className="w-full md:w-auto">
+            <Button href={`mailto:${contact.supportEmail}`} className="w-full md:w-auto">
               Send an Inquiry
             </Button>
           </div>
@@ -82,36 +129,34 @@ const Contact: React.FC = () => {
               ref={(el) => {
                 if (el) cardRefs.current[0] = el;
               }}
-              className="flex gap-4 p-5 rounded-2xl bg-white border border-black/5 hover:border-brand-accent/30 hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent" aria-hidden="true">
-                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M3 6h18v12H3z" />
-                  <path d="M3 7l9 7 9-7" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm tracking-wide uppercase text-brand-muted font-semibold mb-1">Official Email</p>
-                <p className="text-brand-text font-medium">Dilpar99@gmail.com</p>
-              </div>
+              <ContactCard 
+                label="Official Email"
+                value={contact.supportEmail}
+                icon={
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 6h18v12H3z" />
+                    <path d="M3 7l9 7 9-7" />
+                  </svg>
+                }
+              />
             </div>
 
             <div
               ref={(el) => {
                 if (el) cardRefs.current[1] = el;
               }}
-              className="flex gap-4 p-5 rounded-2xl bg-white border border-black/5 hover:border-brand-accent/30 hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent" aria-hidden="true">
-                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z" />
-                  <circle cx="12" cy="10" r="2.6" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm tracking-wide uppercase text-brand-muted font-semibold mb-1">Headquarters</p>
-                <p className="text-brand-text font-medium">Advanced Health-Tech Research Hub</p>
-              </div>
+              <ContactCard 
+                label="Headquarters"
+                value={contact.location}
+                icon={
+                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z" />
+                    <circle cx="12" cy="10" r="2.6" />
+                  </svg>
+                }
+              />
             </div>
           </div>
         </div>

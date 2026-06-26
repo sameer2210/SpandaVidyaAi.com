@@ -1,4 +1,5 @@
 export const T = {
+  // Colors
   ivory:        "#F8F5EF",
   ivoryDeep:    "#EDE6D6",
   charcoal:     "#1A1814",
@@ -13,7 +14,72 @@ export const T = {
   darkCard:     "#161410",
   darkBorder:   "#2A2620",
   cream:        "#FBF9F4",
+
+  // Spacing Scale
+  spacing: {
+    4: "4px",
+    8: "8px",
+    12: "12px",
+    16: "16px",
+    24: "24px",
+    32: "32px",
+    48: "48px",
+    64: "64px",
+    96: "96px",
+    128: "128px",
+  },
+
+  // Radius
+  radius: {
+    sm: "4px",
+    md: "8px",
+    lg: "16px",
+    xl: "24px",
+  },
+
+  // Borders
+  border: {
+    light: "1px solid rgba(26, 24, 20, 0.06)",
+    dark: "1px solid rgba(255, 255, 255, 0.08)",
+    accent: "1px solid rgba(140, 107, 62, 0.2)",
+  },
+
+  // Shadows
+  shadows: {
+    sm: "0 2px 8px rgba(26, 24, 20, 0.02)",
+    md: "0 4px 16px rgba(26, 24, 20, 0.04)",
+    lg: "0 12px 32px rgba(26, 24, 20, 0.06)",
+  },
+
+  // Transitions & Easing
+  transitions: {
+    duration: "300ms",
+    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    standard: "all 300ms cubic-bezier(0.16, 1, 0.3, 1)",
+  },
+
+  // Opacities
+  opacity: {
+    text: "0.85",
+    muted: "0.6",
+    line: "0.0",
+  },
+
+  // Z-Index
+  zIndex: {
+    background: 0,
+    content: 10,
+    navbar: 50,
+    modal: 100,
+  },
+
+  // Blur
+  blur: {
+    nav: "20px",
+    glow: "80px",
+  }
 };
+
 
 export const GLOBAL_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap');

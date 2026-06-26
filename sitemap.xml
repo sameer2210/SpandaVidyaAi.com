@@ -61,4 +61,20 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Privacy Policy & Security -->
+  <url>
+    <loc>https://spandavidya.ai/privacy</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Terms & Conditions -->
+  <url>
+    <loc>https://spandavidya.ai/terms</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

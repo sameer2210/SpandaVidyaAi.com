@@ -6,62 +6,70 @@ export default function TechSection() {
   const [sectionRef, visible] = useScrollReveal(0.1);
 
   const nodes = [
-    { label: "Client", x: 50, y: 50, color: "#8BACC4" },
-    { label: "CDN/WAF", x: 200, y: 50, color: T.accentWarm },
+    { label: "Client App", x: 50, y: 50, color: T.accentLight },
+    { label: "CDN / WAF", x: 200, y: 50, color: T.accentWarm },
     { label: "API Gateway", x: 360, y: 50, color: T.accentWarm },
-    { label: "Auth", x: 280, y: 160, color: "#8A8378" },
+    { label: "JWT Auth", x: 280, y: 160, color: T.muted },
     { label: "Chat Service", x: 440, y: 160, color: T.sage },
-    { label: "AI Orchestrator", x: 360, y: 270, color: T.accent },
-    { label: "Gemini / LLM", x: 520, y: 270, color: "#B8935A" },
-    { label: "RAG Pipeline", x: 280, y: 380, color: T.sage },
-    { label: "Vector DB", x: 160, y: 380, color: T.sage },
-    { label: "Postgres", x: 440, y: 380, color: "#6B7C8E" },
-    { label: "Redis", x: 360, y: 480, color: "#C47C5A" },
-    { label: "Observability", x: 200, y: 480, color: "#8A8378" },
+    { label: "AI Backend", x: 360, y: 270, color: T.accent },
+    { label: "Gemini API", x: 520, y: 270, color: T.accentWarm },
+    { label: "HuggingFace", x: 280, y: 380, color: T.sage },
+    { label: "AWS S3", x: 160, y: 380, color: T.sage },
+    { label: "PostgreSQL", x: 440, y: 380, color: T.muted },
+    { label: "Redis Cache", x: 360, y: 480, color: T.accentWarm },
+    { label: "Observability", x: 200, y: 480, color: T.muted },
   ];
 
   const edges = [
     [0,1],[1,2],[2,3],[2,4],[3,5],[4,5],[5,6],[5,7],[7,8],[5,9],[5,10],[8,10],[9,10],[10,11]
   ];
 
-  const techStack = [
-    { cat: "Frontend", items: ["React + Vite", "TypeScript", "Tailwind CSS"] },
-    { cat: "AI Layer", items: ["Google Gemini API", "Prompt Engineering", "SSE Streaming"] },
-    { cat: "Infrastructure", items: ["Kubernetes", "Redis Cluster", "Postgres + Replicas"] },
-    { cat: "Observability", items: ["OpenTelemetry", "Prometheus", "Grafana + Loki"] },
-    { cat: "Security", items: ["OIDC / JWT", "WAF + CDN", "KMS Encryption"] },
-    { cat: "Scale Targets", items: ["P95 TTFT < 2.5s", "99.95% uptime", "1M sessions"] },
-  ];
-
   return (
-    <section id="technology" ref={sectionRef} style={{
-      background: T.darkBg, padding: "140px clamp(24px, 5vw, 80px)",
-      position: "relative", overflow: "hidden",
-    }}>
+    <section 
+      id="technology" 
+      ref={sectionRef} 
+      className="py-32 px-6 md:px-[8vw] relative overflow-hidden"
+      style={{ background: T.darkBg }}
+    >
       {/* Grid overlay */}
-      <div style={{
-        position: "absolute", inset: 0, opacity: 0.025,
-        backgroundImage: `linear-gradient(${T.accent} 1px, transparent 1px),
-                          linear-gradient(90deg, ${T.accent} 1px, transparent 1px)`,
-        backgroundSize: "40px 40px",
-      }} />
+      <div 
+        style={{
+          position: "absolute", 
+          inset: 0, 
+          opacity: 0.025,
+          backgroundImage: `linear-gradient(${T.accent} 1px, transparent 1px),
+                             linear-gradient(90deg, ${T.accent} 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+          pointerEvents: "none",
+        }} 
+      />
 
-      <div style={{ maxWidth: 1320, margin: "0 auto", position: "relative" }}>
-        <span className={`reveal ${visible ? "visible" : ""}`} style={{
-          display: "inline-block", fontSize: 11,
-          letterSpacing: "0.16em", color: T.accentWarm,
-          textTransform: "uppercase", marginBottom: 20,
-        }}>
-          03 — Infrastructure
+      <div className="max-w-7xl mx-auto relative z-10">
+        <span 
+          className={`reveal ${visible ? "visible" : ""} inline-block text-xs font-semibold uppercase tracking-[0.16em] mb-5`} 
+          style={{ color: T.accentWarm }}
+        >
+          05 — Infrastructure
         </span>
 
+        <h2 
+          className={`serif reveal ${visible ? "visible reveal-delay-1" : ""} text-4xl md:text-5xl font-semibold mb-12 leading-tight`} 
+          style={{ color: T.ivory }}
+        >
+          Clinical-Grade Systems Architecture
+        </h2>
+
         {/* Architecture diagram */}
-        <div className={`reveal reveal-delay-2 ${visible ? "visible" : ""}`} style={{
-          background: T.darkCard, border: `1px solid ${T.darkBorder}`,
-          borderRadius: 2, padding: "48px 32px", marginBottom: 60,
-          overflowX: "auto",
-        }}>
-          <svg viewBox="0 0 580 540" style={{ width: "100%", maxWidth: 580, display: "block", margin: "0 auto" }}>
+        <div 
+          className={`reveal reveal-delay-2 ${visible ? "visible" : ""} p-8 md:p-12 mb-10 overflow-x-auto`} 
+          style={{
+            background: T.darkCard, 
+            border: `1px solid ${T.darkBorder}`,
+            borderRadius: T.radius.xl,
+            boxShadow: T.shadows.md,
+          }}
+        >
+          <svg viewBox="0 0 580 540" className="w-full max-w-[580px] block mx-auto">
             {/* Edges */}
             {edges.map(([a, b], i) => (
               <line key={i}
@@ -100,8 +108,6 @@ export default function TechSection() {
             ))}
           </svg>
         </div>
-
-
       </div>
     </section>
   );

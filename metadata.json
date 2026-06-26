@@ -1,6 +1,34 @@
-
 {
   "name": "Naadi Raksha AI Platform",
   "description": "A research-driven platform digitizing Ayurvedic pulse diagnostics using signal intelligence and AI.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "app": {
+    "title": "SpandaVidya",
+    "name": "spandaVidya - AI Ayurvedic Pulse Diagnostics",
+    "shortName": "spandaVidya",
+    "description": "AI-powered Ayurvedic pulse diagnostics combining traditional Naadi Pariksha with modern technology",
+    "author": "SpandaVidya Research Initiative"
+  },
+  "branding": {
+    "logo": "/logo2.png",
+    "themeColor": "#b58b2a",
+    "backgroundColor": "#f9fafb"
+  },
+  "contact": {
+    "email": "Dilpar99@gmail.com",
+    "officialEmail": "contact@spandavidya.ai",
+    "location": "Advanced Health-Tech Research Hub",
+    "headquarters": "IIT Kanpur, India"
+  },
+  "urls": {
+    "website": "https://spandavidya.ai",
+    "appLink": "https://naadi-raksha-liart.vercel.app/"
+  },
+  "social": {
+    "twitter": "https://twitter.com/spandaVidya",
+    "linkedin": "https://linkedin.com/company/spandavidya",
+    "facebook": "https://facebook.com/spandaVidya",
+    "github": "https://github.com/spandavidya",
+    "instagram": "https://instagram.com/spandaVidya"
+  }
 }

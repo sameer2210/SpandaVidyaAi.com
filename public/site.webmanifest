@@ -6,12 +6,30 @@
   "display": "standalone",
   "background_color": "#f9fafb",
   "theme_color": "#b58b2a",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/logo2.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    }
+  ],
+  "categories": ["health", "medical", "wellness"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ]
 }

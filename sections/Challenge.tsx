@@ -2,6 +2,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { T } from '../theme';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,23 +57,28 @@ const Challenge: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 px-6 md:px-[8vw] bg-[#fdfdfd] overflow-hidden">
+    <section ref={sectionRef} className="py-32 px-6 md:px-[8vw] bg-transparent overflow-hidden">
       <div className="grid md:grid-cols-2 gap-20 items-center">
         <article ref={contentRef}>
           <header className="mb-10">
-            <div className="text-brand-accent text-sm font-bold uppercase tracking-widest mb-4">The Challenge</div>
-            <h2 className="font-serif text-5xl md:text-6xl font-semibold text-brand-text leading-tight">
+            <span 
+              className="inline-block text-xs font-semibold uppercase tracking-[0.16em] mb-5" 
+              style={{ color: T.accent }}
+            >
+              01 — Challenge
+            </span>
+            <h2 className="font-serif text-5xl md:text-6xl font-semibold leading-tight" style={{ color: T.charcoal }}>
               Bridging Ancient Wisdom <br />& Precise Instrumentation
             </h2>
           </header>
-          <div className="space-y-8 text-lg text-brand-muted leading-relaxed">
+          <div className="space-y-8 text-lg leading-relaxed font-light" style={{ color: T.muted }}>
             <p>
               Classical Naadi diagnostics offers profound systemic insights into a patient's functional health, yet its clinical wider utility has been limited by the inherent subjectivity of human touch.
             </p>
             <p>
-              Modern healthcare excels in structural imaging but often misses the real-time, functional context provided by the arterial pulse. <strong>SpandaVidya</strong> bridges this gap by introducing objective signal data into traditional diagnostics.
+              Modern healthcare excels in structural imaging but often misses the real-time, functional context provided by the arterial pulse. <strong style={{ color: T.charcoal }}>SpandaVidya</strong> bridges this gap by introducing objective signal data into traditional diagnostics.
             </p>
-            <blockquote className="pt-6 border-l-4 border-brand-accent/40 pl-8 italic text-brand-text/80 text-xl font-serif">
+            <blockquote className="pt-6 border-l-4 pl-8 italic text-xl font-serif" style={{ borderLeftColor: `${T.accent}60`, color: T.charcoal }}>
               "Our mission is to empower Ayurvedic practitioners with digital vision while providing clinicians with holistic functional data."
             </blockquote>
           </div>

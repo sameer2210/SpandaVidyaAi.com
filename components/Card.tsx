@@ -1,17 +1,38 @@
-
-import React from 'react';
+import React, { useState, forwardRef } from 'react';
+import { T } from '../theme';
 
 interface CardProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const Card: React.FC<CardProps> = ({ children, className = '' }) => {
+const Card = forwardRef<HTMLDivElement, CardProps>(({ children, className = '', style = {} }, ref) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const cardStyle: React.CSSProperties = {
+    backgroundColor: T.cream,
+    border: T.border.light,
+    borderRadius: T.radius.xl, // 24px
+    boxShadow: isHovered ? T.shadows.md : T.shadows.sm,
+    transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
+    transition: `all ${T.transitions.duration} ${T.transitions.easing}`,
+    ...style,
+  };
+
   return (
-    <div className={`bg-white border border-black/5 rounded-[2rem] p-8 md:p-10 shadow-sm hover:shadow-xl transition-all duration-300 ${className}`}>
+    <div
+      ref={ref}
+      className={`p-8 md:p-12 flex flex-col ${className}`}
+      style={cardStyle}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {children}
     </div>
   );
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;
